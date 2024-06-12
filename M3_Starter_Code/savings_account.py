@@ -24,10 +24,12 @@ def create_savings_account(balance, interest_rate, months):
 
     # Calculate interest earned
     # ADD YOUR CODE HERE
-    """ Assuming interest is accrued and compounded monthly
+    """ Assuming interest is accrued and compounded monthly. The exercise implies
+    straight line non-compounding interest, however that would not fit the legal
+    definition of a savings account in the U.S.
     """
 
-    interest_earned = ((new_account.balance * ((1+((interest_rate)/12))**months)) - new_account.balance)
+    interest_earned = ((new_account.balance * ((1+((interest_rate/100)/12))**months)) - new_account.balance)
 
     # Update the savings account balance by adding the interest earned
     # ADD YOUR CODE HERE
@@ -46,12 +48,13 @@ def create_savings_account(balance, interest_rate, months):
 
     # Return the updated balance and interest earned.
     # ADD YOUR CODE HERE
-    print(new_account.balance)
-    print(interest_earned)
-    print(updated_balance)
-    return new_account.balance
+    # print(new_account.balance)
+    # print(interest_earned)
+    # print(updated_balance)
+    return new_account.balance, new_account.interest
            
 
-if __name__ == "__main__":
-    create_savings_account(155,.035,15)
+# testing!
+# if __name__ == "__main__":
+#     create_savings_account(155,3.5,15)
     
